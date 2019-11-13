@@ -3,6 +3,31 @@
 
 // Write your Javascript code.
 
+
+var form = document.getElementById("board");
+var cells = document.getElementsByClassName("cell");
+for (var i = 0; i < cells.length; i++) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 var turn = "x";
 
 function setTurn() {
@@ -70,3 +95,4 @@ for (i = 0; i < cells.length; i++) {
 }
 
 setTurn();
+*/
