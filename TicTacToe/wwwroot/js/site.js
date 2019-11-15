@@ -3,15 +3,38 @@
 
 // Write your Javascript code.
 
+var squares = document.getElementsByClassName("square");
+for (var i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('dragenter', onDragEnter);
+    squares[i].addEventListener('drop', onDrop);
+    squares[i].addEventListener('dragleave', onDragLeave);
+}
 
-var form = document.getElementById("board");
-var cells = document.getElementsByClassName("cell");
-for (var i = 0; i < cells.length; i++) {
+function onDragEnter(event) {
+    if (event.target.children.length > 0) return;
+    if (event.target.classList.contains("checker")) return;
+    if (event.target.classList.contains("red")) return;
+    event.preventDefault();
+    event.target.style.backgroundColor = "yellow";
+}
 
+function onDragStart(event) {
+    console.log(event.target.dataset);
+    dragging = {
+        x: event.target.dataset.x,
+        y: event.target.dataset.y
+    }
+    
+}
+
+function onDragDrop(event) {
+    console.log(event);
 }
 
 
-
+function onDragLeave(event) {
+    event.target.style.backgroundColor = null;
+}
 
 
 
